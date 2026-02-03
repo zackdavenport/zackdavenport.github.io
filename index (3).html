@@ -144,6 +144,40 @@
             padding: 4rem 0 6rem;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.3s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('mountain-landscape.svg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url('maple-branch.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes fadeInUp {
@@ -714,6 +748,38 @@
             0%, 100% { transform: translateY(0) translateX(0); }
             50% { transform: translateY(-20px) translateX(10px); }
         }
+
+        /* Wave Divider */
+        .wave-divider {
+            width: 100%;
+            height: 80px;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+
+        .wave-divider img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Adjust sections to remove double borders when using dividers */
+        section.with-divider::before {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero::after {
+                width: 200px;
+                height: 200px;
+                opacity: 0.2;
+            }
+
+            .wave-divider {
+                height: 60px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -756,10 +822,13 @@
             </div>
         </section>
 
-        <section id="about" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="about" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-number">一 (ONE)</div>
                     <h2>About Me</h2>
                 </div>
                 <div class="about-content">
@@ -792,24 +861,30 @@
             </div>
         </section>
 
-        <section id="experience" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="experience" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-number">二 (TWO)</div>
                     <h2>Experience</h2>
                 </div>
                 <div class="experience-callout">
                     <h3>8 Years of Educational Leadership</h3>
                     <p>As a former educator teaching nearly every social studies subject from economics to world history, I have 8 years of experience designing learning systems, distilling key information, and quickly solving dozens of unexpected problems a day. These skills translate directly to strategic leadership and organizational management.</p>
-                    <a href="#" class="btn" onclick="alert('Please upload your resume PDF to link here'); return false;">View Full Resume (PDF)</a>
+                    <a href="Zachary_Davenport Resume.pdf" class="btn" target="_blank">View Full Resume (PDF)</a>
                 </div>
             </div>
         </section>
 
-        <section id="insights" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="insights" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-number">三 (THREE)</div>
                     <h2>Insights</h2>
                 </div>
                 <div class="insights-preview">
@@ -820,10 +895,13 @@
             </div>
         </section>
 
-        <section id="contact" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="contact" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-number">四 (FOUR)</div>
                     <h2>Let's Connect</h2>
                 </div>
                 <div class="contact-grid">
