@@ -1,0 +1,130 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leaf1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b8453e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b3832;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leaf2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d84e3d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8453e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leaf3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8453e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7a3832;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Branch -->
+  <path d="M 50 250 Q 150 200, 250 150 Q 300 120, 350 100" 
+        fill="none" 
+        stroke="#3d5a4a" 
+        stroke-width="3" 
+        stroke-linecap="round"
+        opacity="0.8"/>
+  
+  <!-- Small branches -->
+  <path d="M 150 200 Q 140 180, 130 165" 
+        fill="none" 
+        stroke="#3d5a4a" 
+        stroke-width="2" 
+        stroke-linecap="round"
+        opacity="0.7"/>
+  <path d="M 200 175 Q 210 160, 220 145" 
+        fill="none" 
+        stroke="#3d5a4a" 
+        stroke-width="2" 
+        stroke-linecap="round"
+        opacity="0.7"/>
+  <path d="M 280 130 Q 295 115, 310 100" 
+        fill="none" 
+        stroke="#3d5a4a" 
+        stroke-width="2" 
+        stroke-linecap="round"
+        opacity="0.7"/>
+  
+  <!-- Maple leaves -->
+  <!-- Leaf 1 -->
+  <g transform="translate(130, 165) rotate(-15)">
+    <path d="M 0,-15 L -8,-5 L -12,0 L -8,5 L -3,8 L 0,12 L 3,8 L 8,5 L 12,0 L 8,-5 Z" 
+          fill="url(#leaf1)" 
+          opacity="0.9">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 0 0"
+        to="5 0 0"
+        dur="3s"
+        repeatCount="indefinite"
+        additive="sum"/>
+    </path>
+  </g>
+  
+  <!-- Leaf 2 -->
+  <g transform="translate(220, 145) rotate(25)">
+    <path d="M 0,-18 L -10,-6 L -14,0 L -10,6 L -4,10 L 0,15 L 4,10 L 10,6 L 14,0 L 10,-6 Z" 
+          fill="url(#leaf2)" 
+          opacity="0.95">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 0 0"
+        to="-5 0 0"
+        dur="4s"
+        repeatCount="indefinite"
+        additive="sum"/>
+    </path>
+  </g>
+  
+  <!-- Leaf 3 -->
+  <g transform="translate(310, 100) rotate(-30)">
+    <path d="M 0,-16 L -9,-5 L -13,0 L -9,5 L -3,9 L 0,14 L 3,9 L 9,5 L 13,0 L 9,-5 Z" 
+          fill="url(#leaf3)" 
+          opacity="0.9">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 0 0"
+        to="7 0 0"
+        dur="3.5s"
+        repeatCount="indefinite"
+        additive="sum"/>
+    </path>
+  </g>
+  
+  <!-- Leaf 4 (smaller) -->
+  <g transform="translate(170, 185) rotate(10)">
+    <path d="M 0,-12 L -7,-4 L -10,0 L -7,4 L -2,7 L 0,10 L 2,7 L 7,4 L 10,0 L 7,-4 Z" 
+          fill="url(#leaf1)" 
+          opacity="0.85">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 0 0"
+        to="-6 0 0"
+        dur="3.2s"
+        repeatCount="indefinite"
+        additive="sum"/>
+    </path>
+  </g>
+  
+  <!-- Leaf 5 (smaller) -->
+  <g transform="translate(260, 140) rotate(-20)">
+    <path d="M 0,-13 L -7,-4 L -11,0 L -7,4 L -2,8 L 0,11 L 2,8 L 7,4 L 11,0 L 7,-4 Z" 
+          fill="url(#leaf2)" 
+          opacity="0.88">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 0 0"
+        to="4 0 0"
+        dur="3.8s"
+        repeatCount="indefinite"
+        additive="sum"/>
+    </path>
+  </g>
+</svg>

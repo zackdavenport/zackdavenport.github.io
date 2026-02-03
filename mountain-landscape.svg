@@ -1,0 +1,100 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8c5d6;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#fdfbf7;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="mountain1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5566;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#2d5566;stop-opacity:0.05" />
+    </linearGradient>
+    <linearGradient id="mountain2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d5a4a;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#3d5a4a;stop-opacity:0.03" />
+    </linearGradient>
+    <linearGradient id="mountain3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7a9b7e;stop-opacity:0.08" />
+      <stop offset="100%" style="stop-color:#7a9b7e;stop-opacity:0.02" />
+    </linearGradient>
+    <radialGradient id="mistGrad">
+      <stop offset="0%" style="stop-color:#fdfbf7;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#fdfbf7;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sky gradient -->
+  <rect x="0" y="0" width="1200" height="600" fill="url(#skyGrad)"/>
+  
+  <!-- Distant mountains (most faded) -->
+  <path d="M 0 400 L 200 300 L 400 350 L 600 280 L 800 340 L 1000 310 L 1200 360 L 1200 600 L 0 600 Z" 
+        fill="url(#mountain1)">
+    <animate attributeName="opacity" values="0.6;0.7;0.6" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Middle mountains -->
+  <path d="M 0 450 L 150 380 L 350 420 L 550 360 L 750 400 L 950 370 L 1150 410 L 1200 600 L 0 600 Z" 
+        fill="url(#mountain2)">
+    <animate attributeName="opacity" values="0.7;0.8;0.7" dur="10s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Foreground mountains with trees -->
+  <path d="M 0 500 L 100 450 L 200 470 L 300 430 L 400 460 L 500 420 L 600 450 L 700 430 L 800 460 L 900 440 L 1000 470 L 1100 450 L 1200 480 L 1200 600 L 0 600 Z" 
+        fill="url(#mountain3)">
+    <animate attributeName="opacity" values="0.8;0.9;0.8" dur="12s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Mist layers (floating clouds) -->
+  <ellipse cx="300" cy="380" rx="200" ry="40" fill="url(#mistGrad)" opacity="0.3">
+    <animate attributeName="cx" values="300;320;300" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="15s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="700" cy="420" rx="250" ry="50" fill="url(#mistGrad)" opacity="0.25">
+    <animate attributeName="cx" values="700;680;700" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.25;0.45;0.25" dur="18s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="1000" cy="350" rx="180" ry="35" fill="url(#mistGrad)" opacity="0.28">
+    <animate attributeName="cx" values="1000;1020;1000" dur="20s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.28;0.48;0.28" dur="20s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Subtle pine tree silhouettes on mountains -->
+  <g opacity="0.15">
+    <polygon points="180,440 175,460 185,460" fill="#3d5a4a"/>
+    <polygon points="180,435 176,450 184,450" fill="#3d5a4a"/>
+    <rect x="178" y="460" width="4" height="15" fill="#3d5a4a"/>
+    
+    <polygon points="520,410 514,435 526,435" fill="#3d5a4a"/>
+    <polygon points="520,405 516,422 524,422" fill="#3d5a4a"/>
+    <rect x="518" y="435" width="4" height="18" fill="#3d5a4a"/>
+    
+    <polygon points="820,445 815,465 825,465" fill="#3d5a4a"/>
+    <polygon points="820,440 816,455 824,455" fill="#3d5a4a"/>
+    <rect x="818" y="465" width="4" height="15" fill="#3d5a4a"/>
+  </g>
+  
+  <!-- Subtle sun/moon glow -->
+  <circle cx="950" cy="150" r="60" fill="#d4c5a9" opacity="0.08">
+    <animate attributeName="opacity" values="0.08;0.12;0.08" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Autumn leaves floating (small accents) -->
+  <g opacity="0.4">
+    <path d="M 200 250 L 195 248 L 192 250 L 195 252 L 198 254 L 200 256 L 202 254 L 205 252 L 208 250 L 205 248 Z" 
+          fill="#b8453e">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 20,100; 0,200" dur="25s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" 
+                        values="0 200 250; 360 200 250" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    
+    <path d="M 800 200 L 796 199 L 794 200 L 796 202 L 798 203 L 800 205 L 802 203 L 804 202 L 806 200 L 804 199 Z" 
+          fill="#d84e3d">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; -30,120; -10,240" dur="30s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" 
+                        values="0 800 200; 360 800 200" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </path>
+  </g>
+</svg>
