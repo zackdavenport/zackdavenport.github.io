@@ -144,6 +144,40 @@
             padding: 4rem 0 6rem;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.3s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('mountain-landscape.svg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url('maple-branch.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.25;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes fadeInUp {
@@ -714,6 +748,38 @@
             0%, 100% { transform: translateY(0) translateX(0); }
             50% { transform: translateY(-20px) translateX(10px); }
         }
+
+        /* Wave Divider */
+        .wave-divider {
+            width: 100%;
+            height: 80px;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+
+        .wave-divider img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Adjust sections to remove double borders when using dividers */
+        section.with-divider::before {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero::after {
+                width: 200px;
+                height: 200px;
+                opacity: 0.15;
+            }
+
+            .wave-divider {
+                height: 60px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -756,7 +822,11 @@
             </div>
         </section>
 
-        <section id="about" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="about" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
                     <div class="section-number">一 (ONE)</div>
@@ -792,7 +862,11 @@
             </div>
         </section>
 
-        <section id="experience" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="experience" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
                     <div class="section-number">二 (TWO)</div>
@@ -806,7 +880,11 @@
             </div>
         </section>
 
-        <section id="insights" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="insights" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
                     <div class="section-number">三 (THREE)</div>
@@ -820,7 +898,11 @@
             </div>
         </section>
 
-        <section id="contact" class="fade-in-section">
+        <div class="wave-divider">
+            <img src="wave-divider.svg" alt="" aria-hidden="true">
+        </div>
+
+        <section id="contact" class="fade-in-section with-divider">
             <div class="container">
                 <div class="section-header">
                     <div class="section-number">四 (FOUR)</div>
@@ -835,7 +917,7 @@
                     <div class="contact-method">
                         <div class="contact-icon">✉️</div>
                         <h3>Email</h3>
-                        <a href="mailto:zack_robbins@msn.com">zack_robbins@msn.com</a>
+                        <a href="/cdn-cgi/l/email-protection#d0aab1b3bb8fa2bfb2b2b9bea390bda3befeb3bfbd"><span class="__cf_email__" data-cfemail="a3d9c2c0c8fcd1ccc1c1cacdd0e3ced0cd8dc0ccce">[email&#160;protected]</span></a>
                     </div>
                 </div>
             </div>
@@ -848,7 +930,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -872,14 +954,4 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
-</body>
-</html>
+                    entry.target.
