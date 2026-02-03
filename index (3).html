@@ -773,7 +773,7 @@
             .hero::after {
                 width: 200px;
                 height: 200px;
-                opacity: 0.15;
+                opacity: 0.2;
             }
 
             .wave-divider {
@@ -913,7 +913,7 @@
                     <div class="contact-method">
                         <div class="contact-icon">✉️</div>
                         <h3>Email</h3>
-                        <a href="/cdn-cgi/l/email-protection#dea4bfbdb581acb1bcbcb7b0ad9eb3adb0f0bdb1b3"><span class="__cf_email__" data-cfemail="1a607b797145687578787374695a77697434797577">[email&#160;protected]</span></a>
+                        <a href="mailto:zack_robbins@msn.com">zack_robbins@msn.com</a>
                     </div>
                 </div>
             </div>
@@ -926,7 +926,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -950,4 +950,14 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
