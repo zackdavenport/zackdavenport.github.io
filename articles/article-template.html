@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Zack Davenport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color palette inspired by Japanese gardens */
+            --water-deep: #2d5566;
+            --water-reflection: #4a7c8f;
+            --autumn-red: #b8453e;
+            --pine-green: #3d5a4a;
+            --moss-green: #7a9b7e;
+            --stone-gray: #8a8577;
+            --sand-beige: #d4c5a9;
+            --sky-blue: #a8c5d6;
+            --paper-white: #fdfbf7;
+            --ink-black: #2a2520;
+            --torii-orange: #d84e3d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--paper-white);
+            color: var(--ink-black);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Zen garden inspired background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(61, 90, 74, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168, 197, 214, 0.04) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(212, 197, 169, 0.05) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Navigation */
+        header {
+            padding: 1.5rem 0;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--sand-beige);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            color: var(--water-deep);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--autumn-red);
+            transform: translateX(-4px);
+        }
+
+        .back-link::before {
+            content: '←';
+            font-size: 1.2rem;
+        }
+
+        /* Article Container */
+        article {
+            padding: 4rem 0 6rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--sand-beige);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--stone-gray);
+        }
+
+        .article-meta time {
+            color: var(--autumn-red);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .article-meta .read-time {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .article-meta .read-time::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--stone-gray);
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--water-deep);
+            letter-spacing: -0.01em;
+            font-weight: 600;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--stone-gray);
+            font-weight: 300;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--pine-green);
+        }
+
+        .article-content h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--water-deep);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .article-content h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--water-deep);
+            font-weight: 600;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .article-content strong {
+            font-weight: 600;
+            color: var(--water-deep);
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: var(--stone-gray);
+        }
+
+        .article-content a {
+            color: var(--autumn-red);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: var(--autumn-red);
+        }
+
+        /* Pullquote styling */
+        .pullquote {
+            margin: 3rem 0;
+            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, rgba(184, 69, 62, 0.05) 0%, rgba(212, 197, 169, 0.08) 100%);
+            border-left: 4px solid var(--autumn-red);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pullquote::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, var(--autumn-red) 0%, transparent 70%);
+            opacity: 0.06;
+            border-radius: 50%;
+        }
+
+        .pullquote p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: var(--water-deep);
+            font-style: italic;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* List styling */
+        .article-content ul,
+        .article-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+        }
+
+        .article-content ul li {
+            list-style: none;
+            position: relative;
+        }
+
+        .article-content ul li::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.7em;
+            width: 6px;
+            height: 6px;
+            background: var(--autumn-red);
+            border-radius: 50%;
+        }
+
+        /* Call-to-action box */
+        .article-cta {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--water-deep) 0%, var(--water-reflection) 100%);
+            color: var(--paper-white);
+            border-radius: 4px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta::before {
+            content: '';
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            background: 
+                radial-gradient(circle, transparent 30%, rgba(255, 255, 255, 0.03) 31%, transparent 32%),
+                radial-gradient(circle, transparent 50%, rgba(255, 255, 255, 0.03) 51%, transparent 52%);
+            opacity: 0.5;
+        }
+
+        .article-cta h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: rgba(253, 251, 247, 0.85);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            letter-spacing: 0.03em;
+            background: var(--autumn-red);
+            color: white;
+            border-color: var(--autumn-red);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            background: var(--torii-orange);
+            border-color: var(--torii-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(184, 69, 62, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 2px solid var(--sand-beige);
+            text-align: center;
+            color: var(--stone-gray);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+            font-weight: 300;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .article-content {
+                font-size: 1.05rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.7rem;
+                margin-top: 2.5rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .pullquote {
+                padding: 2rem 1.5rem;
+            }
+
+            .pullquote p {
+                font-size: 1.2rem;
+            }
+
+            .article-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            article {
+                padding: 3rem 0 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="back-link">Back to Home</a>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <div class="container">
+                <div class="article-header">
+                    <div class="article-meta">
+                        <time datetime="2026-02-11">February 11, 2026</time>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                    <h1>Your Article Title Goes Here</h1>
+                    <p class="article-subtitle">A compelling subtitle that summarizes the main point or hooks the reader into your piece.</p>
+                </div>
+
+                <div class="article-content">
+                    <p>Start your article with a strong opening paragraph that draws readers in. This should establish context and explain why this topic matters to your audience.</p>
+
+                    <h2>Your First Main Section</h2>
+                    <p>Continue developing your ideas here. Use clear, concise paragraphs that flow naturally from one to the next. Each paragraph should have a clear purpose and advance your argument or narrative.</p>
+
+                    <p>Remember to <strong>emphasize important points</strong> and provide concrete examples that illustrate your ideas. Your teaching experience gives you a wealth of stories and insights to draw from.</p>
+
+                    <div class="pullquote">
+                        <p>"A memorable quote or key insight that captures the essence of your article. This could be your own observation or a powerful statement that summarizes your main point."</p>
+                    </div>
+
+                    <h2>Another Key Section</h2>
+                    <p>Break your article into digestible sections with clear headings. This makes it easier for readers to scan and find the information they're looking for.</p>
+
+                    <h3>A Subsection If Needed</h3>
+                    <p>Use subsections to organize complex topics or provide deeper detail on specific points.</p>
+
+                    <p>Here's an example of how to use lists effectively:</p>
+
+                    <ul>
+                        <li>First key point with supporting detail</li>
+                        <li>Second important insight or lesson learned</li>
+                        <li>Third takeaway that readers can apply</li>
+                        <li>Fourth element that rounds out the discussion</li>
+                    </ul>
+
+                    <h2>Practical Applications</h2>
+                    <p>Connect your insights to actionable steps. How can readers apply what you're sharing? What concrete actions can they take based on your experience and knowledge?</p>
+
+                    <p>End with a strong conclusion that ties everything together and leaves readers with something to think about. What's the one thing you want them to remember?</p>
+
+                    <div class="article-cta">
+                        <h3>Want to Connect?</h3>
+                        <p>I'm always interested in discussing education, leadership transitions, and working across cultures.</p>
+                        <a href="../index.html#contact" class="btn">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Zack Davenport. Bridging education and business leadership.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
